@@ -30,7 +30,6 @@ meritokz=np.zeros(35)
 # ajuste para C-Si
 referencia = 'Global'
 pv = dados[referencia]
-    
 
 
 pira = dados.bpw21*dados.acrilico
@@ -41,8 +40,8 @@ for i in range(1,35):
     real = (pv*espectro).sum()
     erro21[i] = (medida-real)/real
     merito21[i] = medida-real
-    
-    
+
+
 pira = dados.bpw20*dados.acrilico
 calibra15 = (pv*dados.Global).sum()/(pira*dados.Global).sum()
 for i in range(1,35):
@@ -80,7 +79,7 @@ for i in range(1,35):
     medida = (pira*espectro).sum()*calibra15
     real = (pv*espectro).sum()
     erro41[i] = (medida-real)/real
-    merito41[i] = medida-real  
+    merito41[i] = medida-real
 
 pira = dados['Kipp & Zonen']
 calibra15 = (pv*dados.Global).sum()/(pira*dados.Global).sum()
@@ -90,7 +89,7 @@ for i in range(1,35):
     real = (pv*espectro).sum()
     errokz[i] = (medida-real)/real
     meritokz[i] = medida-real
-    
+
 percentual = 100*(ajuste/(ajuste+ajuste2))
 
 plt.figure()
